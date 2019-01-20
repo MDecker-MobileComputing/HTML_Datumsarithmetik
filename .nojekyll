@@ -1,0 +1,4 @@
+
+File to disable Jekyll build of GitHub pages (the pages of this repo don't use Jekyll).
+
+see also: https://blog.github.com/2009-12-29-bypassing-jekyll-on-github-pages/

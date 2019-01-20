@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>	
+    <title>Berechnung Datums-Differenz</title>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="libs/jquery.mobile-1.4.5.min.css" />
+    <script src="libs/jquery-1.11.1.min.js"></script>
+    <script src="libs/jquery.mobile-1.4.5.min.js"></script>
+    <script src="libs/moment.min.js"></script>
+    <script src="meinCode.js"></script>
+    <!-- This file is licensed under the terms of the BSD 3-Clause License. -->
+</head>
+<body>
+
+  <div data-role="page" id="haupseite">
+
+    <div data-role="header">
+      <h1>Berechnung Datums-Differenz</h1>
+    </div>
+
+    <div class="ui-content" role="main">
+
+      <form>
+
+        <label for="datum-1">Datum 1:</label>
+        <input id="datum-1" type="date" data-clear-btn="false" name="datum-1" value="">
+
+        <p></p>
+
+        <label for="datum-2">Datum 2:</label>
+        <input id="datum-2" type="date" data-clear-btn="false" name="datum-2" value="">
+
+      </form>
+
+      <p></p>
+        
+      <button id="buttonBerechnen"     class="ui-btn ui-corner-all ui-btn-inline">Differenz berechnen</button>
+      <button id="buttonZuruecksetzen" class="ui-btn ui-corner-all ui-btn-inline">Zurücksetzen</button>
+
+      <p></p>
+
+      <h2 id="ergebnis"></h2>
+
+    </div> 
+
+    <div data-role="footer">
+      <h4>2019 by M.D., powered by jQuery Mobile & moment.js</h4>
+    </div>
+
+  </div>
+
+</body>
