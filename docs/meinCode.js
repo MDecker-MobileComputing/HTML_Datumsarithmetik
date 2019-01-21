@@ -2,7 +2,7 @@
 /* This file is licensed under the terms of the BSD 3-Clause License. */
 
 
-/* Datums-Muster für moment.js zum Formatieren und Parsen von Datums-Werten. */
+/* Datums-Muster für ;oment.js zum Formatieren und Parsen von Datums-Werten. */
 const DATUMS_MUSTER = "YYYY-MM-DD";
 
 /*
@@ -10,7 +10,7 @@ const DATUMS_MUSTER = "YYYY-MM-DD";
  */
 function getDatumHeute() { "use strict";
 
-    return moment().format(DATUMS_MUSTER);
+    return moment().format( DATUMS_MUSTER );
 }
 
 /*
@@ -18,7 +18,7 @@ function getDatumHeute() { "use strict";
  */
 function getDatumMorgen() { "use strict";
 
-    return moment().add(1, "days").format(DATUMS_MUSTER);
+    return moment().add( 1, "days" ).format( DATUMS_MUSTER );
 }
 
 
@@ -28,8 +28,8 @@ function getDatumMorgen() { "use strict";
  */
 function berechneDifferenz(datum1, datum2) { "use strict";
     
-    let moment1 = moment(datum1, DATUMS_MUSTER);
-    let moment2 = moment(datum2, DATUMS_MUSTER);
+    let moment1 = moment( datum1, DATUMS_MUSTER );
+    let moment2 = moment( datum2, DATUMS_MUSTER );
 
     let differenz = moment1.diff( moment2, "days" ); 
     // ohne Angabe einer Einheit würde die Differenz in Millisekunden zurückgegeben.
@@ -43,12 +43,12 @@ function berechneDifferenz(datum1, datum2) { "use strict";
  */
 function onButtonBerechnen() { "use strict";
 
-    let datum1 = $("#datum-1").val();
-    let datum2 = $("#datum-2").val();
+    let datum1 = $( "#datum-1" ).val();
+    let datum2 = $( "#datum-2" ).val();
     
-    let differenzTage = berechneDifferenz(datum1, datum2);
+    let differenzTage = berechneDifferenz( datum1, datum2 );
 
-    $("#ergebnis").text(`Differenz: ${differenzTage} Tage`);
+    $( "#ergebnis" ).text( `Differenz: ${differenzTage} Tage` );
 }
 
 
@@ -58,10 +58,10 @@ function onButtonBerechnen() { "use strict";
  */
 function onButtonZuruecksetzen() { "use strict";
 
-    $("#datum-1").val( getDatumHeute()  );
-    $("#datum-2").val( getDatumMorgen() );
+    $( "#datum-1" ).val( getDatumHeute()  );
+    $( "#datum-2" ).val( getDatumMorgen() );
 
-    $("#ergebnis").text("");
+    $( "#ergebnis" ).text("");
 }
 
 
@@ -70,13 +70,13 @@ function onButtonZuruecksetzen() { "use strict";
  */
 function onSeiteGeladen() { "use strict";
 
-    $("#buttonBerechnen"    ).click( onButtonBerechnen     );
-    $("#buttonZuruecksetzen").click( onButtonZuruecksetzen );
+    $( "#buttonBerechnen"     ).click( onButtonBerechnen     );
+    $( "#buttonZuruecksetzen" ).click( onButtonZuruecksetzen );
 
     onButtonZuruecksetzen();
 
-    console.log("Funktion onSeiteGeladen() abgearbeitet.");
+    console.log( "Funktion onSeiteGeladen() abgearbeitet." );
 }
 
 
-$(document).on("pagecreate", onSeiteGeladen);
+$( document ).on( "pagecreate", onSeiteGeladen );
